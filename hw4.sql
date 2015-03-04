@@ -57,7 +57,9 @@ listing_id	price
 Each user has purchased an average of 1.11 listings.
 */
 	SELECT AVG(listings_bought) FROM (SELECT buyer_user_id as `user_id`, COUNT(DISTINCT(listing_id)) as listings_bought FROM transactions GROUP BY user_id) listpurch;
+/*
 In my SQL query, I compute the average number of listings bought. In order to do that, I make a listpurch table which groups purchases by listing ID and counts how many purchases each user has, then take the average of that number of purchase column.
+*/
 
 /*
 Optional:
